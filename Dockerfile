@@ -12,7 +12,6 @@ RUN apt-get update \
 WORKDIR /home/rstudio/
 
 COPY install_dependencies.R install_dependencies.R
-COPY utils.R utils.R
 
 ## Install R dependencies
 RUN Rscript install_dependencies.R

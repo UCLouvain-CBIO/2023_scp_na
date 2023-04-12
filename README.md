@@ -37,11 +37,7 @@ cd 2023_scp_na/
 Start an Rstudio session within a Docker container using:
 
 ```
-docker run \
-    -e PASSWORD=bioc \
-    -p 8787:8787 \
-    -v `pwd`:/home/rstudio/ \ 
-    cvanderaa/2023_scp_na_docker
+docker run -e PASSWORD=bioc -p 8787:8787 -v `pwd`:/home/rstudio/ cvanderaa/2023_scp_na_docker:latest
 ```
 
 Note you should use `%CD%` instead of `pwd` when using Windows. 
@@ -77,6 +73,10 @@ This repository is part of the publication:
 
 # Licence
 
-All vignettes are distributed under a 
-[CC BY-SA licence](https://creativecommons.org/licenses/by-sa/2.0/) 
-licence.
+<a rel="license"
+href="http://creativecommons.org/licenses/by-sa/2.0/"><img
+alt="Creative Commons License" style="border-width:0"
+src="https://i.creativecommons.org/l/by-sa/2.0/88x31.png" /></a><br
+/>This work is licensed under a <a rel="license"
+href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons
+Attribution-ShareAlike 2.0 Generic License</a>.
