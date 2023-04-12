@@ -43,10 +43,10 @@ dfCumSensitivity <- filter(
 ## Asymptotic regression model
 dfLSC <- dfCumSensitivity[dfCumSensitivity$SampleType == "LSC", ]
 AsymptoticRegressionModel <- nls(
-    formula = Sensitivity ~ SSasymp(NumberSamples, Asym, R0, lrc), 
-    data = dfLSC, 
+    formula = Sensitivity ~ SSasymp(NumberSamples, Asym, R0, lrc),
+    data = dfLSC,
     ## weight more observation with more samples
-    weights = dfLSC$NumberSamples^4 
+    weights = dfLSC$NumberSamples^4
 )
 predictedSensitivity <- data.frame(
     NumberSamples = 1:max(dfCumSensitivity$NumberSamples) 
@@ -215,8 +215,8 @@ for (dataset in names(processedData)) {
                 Completeness = mean(Completeness),
                 LocalSensitivityMedian = mean(LocalSensitivityMedian)
             ),
-        size = 5,
-        shape = 1
+        size = 7,
+        shape = 5
     ) +
     labs(
         x = "% data completeness",
