@@ -1,4 +1,4 @@
-# 2023_scp_na
+# Code for the manuscript: *Revisiting the thorny issue of missing values in single-cell proteomics*
 
 The repository contains all the material required to reproduce the 
 figures in the article:
@@ -65,18 +65,13 @@ When complete, push the new image to DockerHub:
 docker push cvanderaa/2023_scp_na_docker
 ```
 
-# Citation
+## Citation
 
-This repository is part of the publication:
+To reuse the code for publications, please cite:
 
->Add preprint refs
+> Add preprint refs
 
-# Licence
+## Licence
 
-<a rel="license"
-href="http://creativecommons.org/licenses/by-sa/2.0/"><img
-alt="Creative Commons License" style="border-width:0"
-src="https://i.creativecommons.org/l/by-sa/2.0/88x31.png" /></a><br
-/>This work is licensed under a <a rel="license"
-href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons
-Attribution-ShareAlike 2.0 Generic License</a>.
+The code is provided under a permissive
+[Artistic 2.0 license](https://opensource.org/license/artistic-license-2-0-php/).
