@@ -3,7 +3,9 @@
 The repository contains all the material required to reproduce the 
 figures in the article:
 
->Add preprint refs
+> Vanderaa, Christophe, and Laurent Gatto. 2023. “Revisiting the 
+> Thorny Issue of Missing Values in Single-Cell Proteomics.” arXiv 
+> [q-bio.QM]. arXiv. http://arxiv.org/abs/2304.06654.
 
 ## Content of the repository
 
@@ -69,7 +71,9 @@ docker push cvanderaa/2023_scp_na_docker
 
 To reuse the code for publications, please cite:
 
-> Add preprint refs
+> Vanderaa, Christophe, and Laurent Gatto. 2023. “Revisiting the 
+> Thorny Issue of Missing Values in Single-Cell Proteomics.” arXiv 
+> [q-bio.QM]. arXiv. http://arxiv.org/abs/2304.06654.
 
 ## Licence
 
