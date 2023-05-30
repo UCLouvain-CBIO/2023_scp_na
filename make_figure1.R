@@ -54,7 +54,7 @@ examplePoint <- pepMisDf[58700, , drop = FALSE]
         linetype = "dashed", colour = "grey70"
     ) +
     scale_color_manual(values = cols) +
-    ylab("Cumulative percentage") +
+    ylab("Cumulative percentage of peptides") +
     xlab("Percentage missing values") +
     theme_minimal())
 
