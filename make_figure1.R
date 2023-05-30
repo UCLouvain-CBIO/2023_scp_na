@@ -36,8 +36,8 @@ pepMisDf <- do.call(rbind, pepMisDf)
 examplePoint <- pepMisDf[58700, , drop = FALSE]
 (pl <- ggplot(pepMisDf) +
     aes(
-        x = propFeatures * 100,
-        y = missingness * 100,
+        y = propFeatures * 100,
+        x = missingness * 100,
         colour = dataset
     ) +
     geom_line(linewidth = 1) +
@@ -45,21 +45,20 @@ examplePoint <- pepMisDf[58700, , drop = FALSE]
         data = examplePoint, colour = "red",
         shape = 21, size = 4
     ) +
-    geom_hline(
-        yintercept = examplePoint$missingness * 100,
+    geom_vline(
+        xintercept = examplePoint$missingness * 100,
         linetype = "dashed", colour = "grey70"
     ) +
-    geom_vline(
-        xintercept = examplePoint$propFeatures * 100,
+    geom_hline(
+        yintercept = examplePoint$propFeatures * 100,
         linetype = "dashed", colour = "grey70"
     ) +
     scale_color_manual(values = cols) +
-    ylab("% of missing values") +
-    xlab("% of peptides") +
+    ylab("Cumulative percentage") +
+    xlab("Percentage missing values") +
     theme_minimal())
 
 if (!dir.exists("figs")) {
     dir.create("figs")
 }
 ggsave("figs/figure1.pdf", plot = pl, width = 5, height = 4)
-
