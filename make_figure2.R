@@ -110,16 +110,6 @@ peps <- c(
 )
 pl <- lapply(peps, function(i) {
     x <- assay(get(i))
-    
-    allc <- union(rownames(datasetB$prec), rownames(x))
-    table(dpc = allc%in%rownames(datasetB$prec), scpdata = allc %in% rownames(x))
-    allc <- union(colnames(datasetB$prec), colnames(x))
-    colnames(x) <- sapply(colnames(x), function(x) paste0(head(tail(strsplit(x, "")[[1]], 12), 10), collapse = ""))
-    table(dpc = allc %in% colnames(datasetB$prec), scpdata = allc %in% colnames(x))
-    x <- x[rownames(datasetB$prec), colnames(datasetB$prec)]
-    
-    x <- table()
-    
     df <- data.frame(
         intensity = rowMeans(x, na.rm = TRUE),
         completeness = 1 - rowMeans(is.na(x))
@@ -129,7 +119,7 @@ pl <- lapply(peps, function(i) {
     ggplot(df) +
         aes(x = intensity, y = completeness) +
         geom_point(size = 0.2, alpha = 0.05) +
-        geom_line(aes(y = dpc), color = "red") +
+        geom_line(aes(y = dpc), color = "red", linewidth = 1) +
         # stat_smooth(
         #     method = "glm",
         #     formula = "y ~ 1 + x",
