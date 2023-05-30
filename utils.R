@@ -112,7 +112,7 @@ minimalProcessing <- function(object) {
 
 
 ## Important note: the derks2022 data will not be treated like other
-## dataset. Instead of processing the fragment data, we process it
+## dataset. Instead of processing the fragment data, we process the
 ## "extracted" data to take advantage of the within run ID propagation
 ## algorithm (see Derks et Slavov 2023).
 prepareData <- function(dataset) {
@@ -159,9 +159,6 @@ featureTableToSparseIdMatrix <- function(featureTable) {
     }
     out
 }
-
-
-#### ----- TO SORT -----#####
 
 jaccardIndexFromIdMatrix <- function(idMatrix) {
     vectorSizes <- colSums(idMatrix)
@@ -344,21 +341,17 @@ addAnnotationToCorrelation <- function(x, groupBy) {
 }
 
 correlationTable <- function(x, MARGIN = 2, groupBy = NULL) {
-    ## Get correlations
     if (MARGIN == 1) x <- t(x)
     corx <- as(
         cor(x, use = "pairwise.complete.obs"),
         "TsparseMatrix"
     )
-    ## Convert to data.frame
     corx <- data.frame(
         cor = corx@x,
         i = colnames(x)[corx@i + 1],
         j = colnames(x)[corx@j + 1]
     )
-    ## Remove diagonal
     corx <- corx[corx$i != corx$j, ]
-    ## Add the groupBy variables
     if (!is.null(groupBy)) {
         corx <- addAnnotationToCorrelation(corx, groupBy)
     }
